@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  /* Base backgrounds */
+  --bg-main: #050505;
+  --bg-section: #0B0B0B;
+  --bg-card: #101114;
+
+  /* Borders */
+  --border: #25272B;
+
+  /* Text */
+  --text-main: #F2F2F2;
+  --text-secondary: #A7A7A7;
+  --text-muted: #6F6F6F;
+
+  /* Brand accent colors */
+  --accent-blue: #00AEEF;
+  --accent-pink: #E10072;
+  --accent-green: #17C717;
+}
+
+@theme inline {
+  --color-bg-main: var(--bg-main);
+  --color-bg-section: var(--bg-section);
+  --color-bg-card: var(--bg-card);
+  --color-border: var(--border);
+  --color-text-main: var(--text-main);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-pink: var(--accent-pink);
+  --color-accent-green: var(--accent-green);
+  --font-primary: var(--font-primary);       /* Familjen Grotesk */
+  --font-secondary: var(--font-secondary);   /* Neue Haas — pending */
+  --font-tertiary: var(--font-tertiary);     /* Martian Mono */
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-primary), Arial, sans-serif;
+}
+
+/* Fullscreen menu overlay — right-top to left-bottom */
+.menu-overlay {
+  clip-path: circle(0% at 100% 0%);
+  transition: clip-path 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+  pointer-events: none;
+}
+
+.menu-overlay.open {
+  clip-path: circle(170% at 100% 0%);
+  pointer-events: all;
+}
+
